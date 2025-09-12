@@ -1,5 +1,5 @@
 /* HOOKS */
-import useIsDesktop from "@/hooks/useIsDesktop";
+import useIsDesktop from "../hooks/useIsDesktop";
 /* UI */
 import Button from "./button";
 /* LIBRARIES */
