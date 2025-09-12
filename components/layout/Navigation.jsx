@@ -18,6 +18,7 @@ const menuItems = [
   { label: "Torneos", href: "/torneos" },
   { label: "Ranking", href: "/ranking" },
   { label: "Contacto", href: "#contacto" },
+  { label: "Admin", href: "/dashboard" },
 ];
 
 const Navigation = ( ) => {
