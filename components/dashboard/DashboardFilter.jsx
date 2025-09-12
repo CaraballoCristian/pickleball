@@ -4,7 +4,7 @@ import { Search, Plus } from 'lucide-react';
 const TableControls = ({ searchTerm, setSearchTerm, filterCategory, setFilterCategory, activeTab, handleAdd }) => (
   <div className="flex flex-col sm:flex-row gap-4 mb-6">
     <div className="flex-1 relative">
-      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-text-secondary dark:text-text-secondary-dark" />
+      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-accent dark:text-accent-dark" />
       <input
         type="text"
         placeholder="Buscar..."
@@ -41,7 +41,7 @@ const TableControls = ({ searchTerm, setSearchTerm, filterCategory, setFilterCat
 
     <button
       onClick={handleAdd}
-      className="flex items-center gap-2 bg-accent dark:bg-accent-dark text-bg dark:text-bg-dark px-4 py-2 rounded-lg font-medium hover:bg-accent-secondary dark:hover:bg-accent-secondary-dark transition-colors"
+      className=" cursor-pointer flex items-center gap-2 bg-accent dark:bg-accent-dark text-bg dark:text-bg-dark px-4 py-2 rounded-lg font-medium hover:bg-accent-secondary dark:hover:bg-accent-secondary-dark transition-colors"
     >
       <Plus className="h-5 w-5" />
       Agregar {activeTab === 'clubes' ? 'Club' : activeTab === 'torneos' ? 'Torneo' : activeTab === 'ranking' ? 'Jugador' : 'Noticia'}

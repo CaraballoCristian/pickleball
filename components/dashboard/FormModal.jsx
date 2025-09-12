@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { X, Save } from 'lucide-react';
 import FormField from './FormField';
 
@@ -41,11 +42,24 @@ const FormModal = ({ showModal, activeTab, editingItem, formData, onFormChange, 
     ]
   };
 
+  // Detectar ESC para cerrar
+  useEffect(() => {
+    const handleEsc = (e) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    };
+    if (showModal) {
+      window.addEventListener("keydown", handleEsc);
+    }
+    return () => window.removeEventListener("keydown", handleEsc);
+  }, [showModal, onClose]);
+
   if (!showModal) return null;
 
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <div className="bg-bg dark:bg-gray-800 rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+      <div className="bg-bg dark:bg-bg-dark rounded-xl shadow-gray-800 shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
         <div className="flex items-center justify-between p-6 border-b border-accent/10 dark:border-accent-dark/10">
           <h3 className="text-xl font-semibold text-text dark:text-text-dark">
             {editingItem ? 'Editar' : 'Agregar'} {activeTab.slice(0, -1)}
@@ -74,13 +88,13 @@ const FormModal = ({ showModal, activeTab, editingItem, formData, onFormChange, 
         <div className="flex justify-end gap-3 p-6 border-t border-accent/10 dark:border-accent-dark/10">
           <button
             onClick={onClose}
-            className="px-4 py-2 text-text dark:text-text-dark hover:text-text dark:hover:text-text-dark rounded-lg hover:bg-bg-secondary/20 dark:hover:bg-bg-secondary-dark/20 transition-colors"
+            className=" cursor-pointer px-4 py-2 text-text dark:text-text-dark hover:text-text dark:hover:text-text-dark rounded-lg hover:bg-bg-secondary/20 dark:hover:bg-bg-secondary-dark/20 transition-colors"
           >
             Cancelar
           </button>
           <button
             onClick={onSave}
-            className="flex items-center gap-2 bg-accent dark:bg-accent-dark text-bg dark:text-bg-dark px-4 py-2 rounded-lg font-medium hover:bg-accent-secondary dark:hover:bg-accent-secondary-dark transition-colors"
+            className=" cursor-pointer flex items-center gap-2 bg-accent dark:bg-accent-dark text-bg dark:text-bg-dark px-4 py-2 rounded-lg font-medium hover:bg-accent-secondary dark:hover:bg-accent-secondary-dark transition-colors"
           >
             <Save className="h-4 w-4" />
             Guardar

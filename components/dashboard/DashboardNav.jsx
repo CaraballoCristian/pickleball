@@ -8,7 +8,7 @@ const NavigationTabs = ({ activeTab, setActiveTab, tabs }) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm flex items-center gap-2 transition-colors ${
+              className={`whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm flex items-center gap-2 transition-colors  cursor-pointer ${
                 activeTab === tab.id
                   ? "border-accent dark:border-accent-dark text-accent dark:text-accent-dark"
                   : "border-transparent text-text-secondary dark:text-text-secondary-dark hover:text-text dark:hover:text-text-dark hover:border-accent/30 dark:hover:border-accent-dark/30 dark:text-text-dark"

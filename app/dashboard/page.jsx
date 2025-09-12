@@ -168,7 +168,7 @@ const AdminDashboard = () => {
   return !isAuthenticated ? (
     <DashboardLogin onLogin={() => setIsAuthenticated(true)} />
   ) : (
-    <div className="min-h-screen bg-bg dark:bg-bg-dark mt-15">
+    <div className="min-h-screen bg-bg dark:bg-bg-dark my-15">
       {/* HEADER */}
       <DashboardHeader />
 
