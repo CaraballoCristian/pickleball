@@ -5,7 +5,7 @@ import Button from "./ui/button";
 /* LIBRARIES */
 import { motion } from "framer-motion";
 /* HOOKS */
-import useIsDesktop from "@/hooks/useIsDesktop";
+import useIsDesktop from "../hooks/useIsDesktop";
 /* DATA */
 import noticiasData from "../data/noticiasData";
 /* NAVIGATION */

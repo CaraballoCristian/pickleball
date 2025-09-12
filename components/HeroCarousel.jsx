@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 /* HOOKS */
-import useCarousel from "@/hooks/useCarousel";
-import useIsDesktop from "@/hooks/useIsDesktop";
+import useCarousel from "../hooks/useCarousel";
+import useIsDesktop from "../hooks/useIsDesktop";
 /* ICONS */
 import { ChevronLeft, ChevronRight } from "lucide-react";
 /* LIBRARIES */

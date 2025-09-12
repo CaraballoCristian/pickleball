@@ -4,7 +4,7 @@ import SectionTitle from "./ui/sectionTitle";
 /* LIBRARIES */
 import { motion } from "framer-motion";
 /* HOOKS */
-import useIsDesktop from "@/hooks/useIsDesktop";
+import useIsDesktop from "../hooks/useIsDesktop";
 /* DATA */
 import aboutData from "../data/aboutData";
 
