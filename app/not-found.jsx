@@ -76,7 +76,7 @@ const Error404Page = () => {
           </h2>
 
           {/* DESCRIPTION */}
-          <p className="text-lg text-text-secondary dark:text-text-secondary-dark max-w-md mx-auto leading-relaxed">
+          <p className="text-lg text-text-secondary dark:text-text-secondary-dark max-w-md mx-auto leading-relaxed dark:text-text-dark/90">
             La página que buscas no existe. Pero no te preocupes, podemos
             ayudarte a encontrar el camino de vuelta.
           </p>

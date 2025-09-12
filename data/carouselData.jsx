@@ -1,7 +1,7 @@
 const carouselData = [
   {
     id: 1,
-    image: '/screenshot_3.png',
+    image: '/slide_3.png',
     title: 'Proximos Torneos',
     description: 'Los eventos más importantes del año están llegando',
     cta: 'Ver Torneos',
@@ -9,7 +9,7 @@ const carouselData = [
   },
   {
     id: 2,
-    image: '/screenshot_2.png',
+    image: '/slide_2.png',
     title: 'Nuevas Instalaciones',
     description: 'Descubre los clubes con las mejores canchas',
     cta: 'Ver Clubes',
@@ -17,7 +17,7 @@ const carouselData = [
   },
   {
     id: 3,
-    image: '/screenshot_1.png',
+    image: '/slide_1.png',
     title: 'Ranking Actualizado',
     description: 'Conoce a los mejores jugadores del país',
     cta: 'Ver Ranking',
