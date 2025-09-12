@@ -1,5 +1,5 @@
 /* HOOKS */
-import useIsDesktop from "../hooks/useIsDesktop";
+import useIsDesktop from "../../hooks/useIsDesktop";
 /* UI */
 import Button from "./button";
 /* LIBRARIES */
@@ -9,7 +9,7 @@ import Link from "next/link";
 
 const CarouselItem = ({ item, direction = 1 }) => {
   const isDesktop = useIsDesktop();
-
+  
   return isDesktop ? (
     /* DESKTOP RENDER */
     <motion.div
