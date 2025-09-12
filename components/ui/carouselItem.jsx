@@ -4,8 +4,9 @@ import useIsDesktop from "../../hooks/useIsDesktop";
 import Button from "./button";
 /* LIBRARIES */
 import { motion } from "framer-motion";
-/* NAVIGATION */
+/* NEXT.JS */
 import Link from "next/link";
+import Image from "next/image";
 
 const CarouselItem = ({ item, direction = 1 }) => {
   const isDesktop = useIsDesktop();
@@ -28,15 +29,18 @@ const CarouselItem = ({ item, direction = 1 }) => {
     >
       {/* CONTAINER */}
       <div className="relative h-full bg-gradient-to-r from-gray-900/70 to-gray-900/50">
-      {/* IMAGE */}
-        <img
+        {/* IMAGE */}
+        <Image
           src={item.image}
           alt={item.title}
-          className="absolute inset-0 w-full h-full object-cover z-0"
+          fill
+          sizes="100vw"
+          className="object-cover z-0"
+          priority={item.id === 1} // Dar prioridad a la primera imagen
+          quality={85}
         />
         {/* CENTER TEXT CONTAINER */}
         <div className="flex items-center justify-center text-text-dark h-full text-center px-4">
-
           {/* CENTER CARD */}
           <motion.div
             className="max-w-4xl lg:min-w-[600px] bg-black/30 p-8 rounded-lg backdrop-blur-sm"
@@ -59,7 +63,6 @@ const CarouselItem = ({ item, direction = 1 }) => {
                 {item.cta}
               </Button>
             </Link>
-
           </motion.div>
         </div>
       </div>
@@ -77,15 +80,19 @@ const CarouselItem = ({ item, direction = 1 }) => {
       {/* CONTAINER */}
       <div className="relative h-full bg-gradient-to-r from-gray-900/70 to-gray-900/50">
         {/* IMAGE */}
-        <img
+        <Image
           src={item.image}
           alt={item.title}
-          className="absolute inset-0 w-full h-full object-cover z-0"
+          fill
+          sizes="100vw"
+          className="object-cover z-0"
+          priority={item.id === 1} // Dar prioridad a la primera imagen
+          quality={85}
         />
         {/* CENTER CARD CONTAINER */}
         <div className="flex items-center justify-center text-text-dark h-full text-center px-4">
           <div className="max-w-4xl lg:min-w-[600px] bg-black/30 p-8 rounded-lg backdrop-blur-sm">
-          {/* TITLE */}
+            {/* TITLE */}
             <h2 className="relative z-10 text-3xl md:text-3xl font-bold mb-4">
               {item.title}
             </h2>
