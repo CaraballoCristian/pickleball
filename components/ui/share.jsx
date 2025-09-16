@@ -14,7 +14,7 @@ import React from "react";
 const Share = ({ url }) => {
   return (
     <>
-      <EmailShareButton subject="Mirá esto" body="Te comparto esta novedad de la asociacion de Pickleball">
+      <EmailShareButton subject="Mirá esto" body="Te comparto esta novedad de la asociacion de Pickleball" url={url}>
         <EmailIcon size={32} round />
       </EmailShareButton>
 
