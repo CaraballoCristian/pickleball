@@ -4,6 +4,8 @@ import Badge from "./badge";
 import Button from "./button";
 /* ICONS */
 import { ExternalLink } from "lucide-react";
+/* NAVIGATION */
+import Link from "next/link";
 
 const NoticiaCard = ({ noticia }) => {
   return (
@@ -43,12 +45,14 @@ const NoticiaCard = ({ noticia }) => {
           </span>
 
           {/* BOTON LEER MAS */}
+          <Link href={`/noticias/${noticia.slug}`} passHref>
           <Button
             variant="ghost"
             className="p-0 cursor-pointer ml-auto mt-auto"
           >
             Leer más <ExternalLink className="ml-2 h-4 w-4" />
           </Button>
+          </Link>
         </div>
       </div>
     </Card>

@@ -3,6 +3,8 @@ import { ExternalLink } from "lucide-react";
 /* LIBRARIES */
 import { motion } from "framer-motion";
 import Button from "./button";
+/* NAVIGATION */
+import Link from "next/link";
 
 const NoticiasBigCard = ({ noticia }) => {
   return (
@@ -54,12 +56,14 @@ const NoticiasBigCard = ({ noticia }) => {
               </span>
 
               {/* BOTON LEER MAS */}
-              <Button
-                variant="ghost"
-                className="p-0 cursor-pointer ml-auto mt-auto"
-              >
-                Leer más <ExternalLink className="ml-2 h-4 w-4" />
-              </Button>
+              <Link href={`/noticias/${noticia.slug}`} passHref>
+                <Button
+                  variant="ghost"
+                  className="p-0 cursor-pointer ml-auto mt-auto"
+                >
+                  Leer más <ExternalLink className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

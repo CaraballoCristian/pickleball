@@ -110,7 +110,6 @@ const page = () => {
             className=" flex justify-between w-full md:w-2/3 lg:w-1/2 mx-auto flex-col sm:flex-row"
           >
             {/* INPUT */}
-
             {!isSubmitted ? (
               <>
                 <input
@@ -127,9 +126,7 @@ const page = () => {
                 </Button>
               </>
             ) : (
-              <CtaFeedback
-                title="Gracias por Suscribirte!"
-              />
+              <CtaFeedback title="Gracias por Suscribirte!" />
             )}
           </form>
         </Cta>

@@ -5,16 +5,16 @@ import { useState } from "react";
 import { Users, Trophy, Crown, Newspaper } from "lucide-react";
 /* COMPONENTES */
 import DashboardHeader from "../../components/dashboard/DashboardHeader";
-import NavigationTabs from "../../components/dashboard/DashboardNav";
+import DashboardLogin from "../../components/dashboard/DashboardLogin";
 import TableControls from "../../components/dashboard/DashboardFilter";
+import NavigationTabs from "../../components/dashboard/DashboardNav";
 import DataTable from "../../components/dashboard/DataTable";
 import FormModal from "../../components/dashboard/FormModal";
-import DashboardLogin from "../../components/dashboard/DashboardLogin";
 /* DATA */
-import clubesData from "../../data/clubesData";
 import { torneosProximos } from "../../data/torneosData";
-import rankingData from "../../data/rankingData";
 import noticiasData from "../../data/noticiasData";
+import rankingData from "../../data/rankingData";
+import clubesData from "../../data/clubesData";
 
 const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState("clubes");
