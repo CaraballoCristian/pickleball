@@ -49,7 +49,7 @@ const AdminLogin = () => {
     // Simular delay de autenticación
     setTimeout(() => {
       if (
-        formData.username === validCredentials.username &&
+        formData.username.toLowerCase() === validCredentials.username &&
         formData.password === validCredentials.password
       ) {
         setIsAuthenticated(true);
