@@ -1,6 +1,8 @@
 "use client";
 /* HOOKS */
-import { useState } from "react";
+import { useEffect, useState } from "react";
+/* NAVIGATION */
+import { usePathname, useRouter } from "next/navigation";
 /* ICONOS */
 import { Users, Trophy, Crown, Newspaper } from "lucide-react";
 /* COMPONENTES */
@@ -10,8 +12,12 @@ import TableControls from "../../components/dashboard/DashboardFilter";
 import NavigationTabs from "../../components/dashboard/DashboardNav";
 import DataTable from "../../components/dashboard/DataTable";
 import FormModal from "../../components/dashboard/FormModal";
+/* HELPERS */
+import slugify from "../../helpers/slugify";
+/* CONTEXT */
+import { useAuth } from "../../context/AuthContext";
 /* DATA */
-import { torneosProximos } from "../../data/torneosData";
+import { torneosProximos, torneosPasados } from "../../data/torneosData";
 import noticiasData from "../../data/noticiasData";
 import rankingData from "../../data/rankingData";
 import clubesData from "../../data/clubesData";
@@ -23,15 +29,34 @@ const AdminDashboard = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filterCategory, setFilterCategory] = useState("all");
   const [formData, setFormData] = useState({});
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   /* SECTION STATES */
   const [clubes, setClubes] = useState(clubesData);
-  const [torneos, setTorneos] = useState(torneosProximos);
+  const [torneos, setTorneos] = useState([
+    ...torneosProximos,
+    ...torneosPasados,
+  ]);
   const [ranking, setRanking] = useState(rankingData);
   const [noticias, setNoticias] = useState(noticiasData);
+  
+  const router = useRouter();
+  const { isAuthenticated } = useAuth();
+  
+  /* EVITO FLASH */
+  const [loaded, setLoaded] = useState(false);
+  setTimeout(() => setLoaded(true), 10);
 
-  /* TABS CONFIGURATION */
+  useEffect(() => {
+    if (!isAuthenticated) {
+      router.push("/auth");
+    }
+  }, [isAuthenticated, router]);
+
+  if (isAuthenticated === null) {
+    return null; // mientras redirige no muestra nada
+  }
+
+  /* TABS CONFIGURATION (FOR NAVIGATION) */
   const tabs = [
     { id: "clubes", label: "Clubes", icon: Users, count: clubes.length },
     { id: "torneos", label: "Torneos", icon: Trophy, count: torneos.length },
@@ -44,7 +69,6 @@ const AdminDashboard = () => {
     },
   ];
 
-  //------------------------- REVISAR ---------------------------------
   /* TAB SELECTOR - DATA PROVIDER */
   const getCurrentData = () => {
     switch (activeTab) {
@@ -72,7 +96,6 @@ const AdminDashboard = () => {
       (activeTab === "torneos" && item.estado === filterCategory);
     return matchesSearch && matchesCategory;
   });
-  //-------------------------------------------------------------------
 
   /* CRUD FUNCTIONS */
   const handleAdd = () => {
@@ -146,6 +169,8 @@ const AdminDashboard = () => {
         }
         break;
       case "noticias":
+        updatedItem.slug = slugify(updatedItem.title);
+
         if (editingItem) {
           setNoticias(
             noticias.map((item) =>
@@ -166,9 +191,12 @@ const AdminDashboard = () => {
   };
 
   return !isAuthenticated ? (
-    <DashboardLogin onLogin={() => setIsAuthenticated(true)} />
-  ) : (
+    <div className="min-h-screen flex items-center justify-center bg-bg dark:bg-bg-dark">
+       <p>Redirecting...</p>
+    </div>
+  ) : loaded && (
     <div className="min-h-screen bg-bg dark:bg-bg-dark my-15">
+      
       {/* HEADER */}
       <DashboardHeader />
 
@@ -190,7 +218,7 @@ const AdminDashboard = () => {
           handleAdd={handleAdd}
         />
 
-        <div className="bg-bg-secondary/20 dark:bg-bg-secondary-dark/20 rounded-xl border border-accent/10 dark:border-accent-dark/10 overflow-hidden">
+        <div className="bg-bg/20 dark:bg-bg-dark/20 rounded-xl border border-accent/10 dark:border-accent-dark/10 overflow-hidden">
           {/* DATA TABLE */}
           <DataTable
             activeTab={activeTab}

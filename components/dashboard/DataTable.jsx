@@ -1,59 +1,62 @@
+/* COMPONENTS */
 import ClubRow from './ClubRow';
 import TorneoRow from './TorneoRow';
 import RankingRow from './RankingRow';
 import NoticiaRow from './NoticiaRow';
 
 const DataTable = ({ activeTab, filteredData, onEdit, onDelete }) => {
-
+  
   /* WHEN FILTERING HAS NO MATCHES */
   if (filteredData.length === 0) {
     return (
-      <div className="text-center py-12">
-        <div className="text-text-secondary dark:text-text-secondary-dark text-lg">
+      <div className="text-center dark:bg-gray-800 py-12">
+        <div className="text-text dark:text-text-dark text-lg">
           No se encontraron resultados
         </div>
       </div>
     );
   }
-
+  
   /* TABLE HEADERS SELECTOR */
   const renderHeaders = () => {
+    const basicStyles = "py-4 px-2 text-sm font-medium text-text dark:text-text-dark";
+
     switch (activeTab) {
       case 'clubes':
         return (
           <>
-            <th className="text-left py-4 px-2 text-sm font-medium text-text-secondary dark:text-text-secondary-dark">Nombre</th>
-            <th className="text-left py-4 px-2 text-sm font-medium text-text-secondary dark:text-text-secondary-dark">Ubicación</th>
-            <th className="text-left py-4 px-2 text-sm font-medium text-text-secondary dark:text-text-secondary-dark">Canchas</th>
-            <th className="text-center py-4 px-2 text-sm font-medium text-text-secondary dark:text-text-secondary-dark">Acciones</th>
+            <th className={`${basicStyles} text-left`}>Nombre</th>
+            <th className={`${basicStyles} text-left`}>Ubicación</th>
+            <th className={`${basicStyles} text-left`}>Canchas</th>
+            <th className={`${basicStyles} text-center`}>Acciones</th>
           </>
         );
       case 'torneos':
         return (
           <>
-            <th className="text-left py-4 px-2 text-sm font-medium text-text-secondary dark:text-text-secondary-dark">Título</th>
-            <th className="text-left py-4 px-2 text-sm font-medium text-text-secondary dark:text-text-secondary-dark">Fecha</th>
-            <th className="text-left py-4 px-2 text-sm font-medium text-text-secondary dark:text-text-secondary-dark">Estado</th>
-            <th className="text-center py-4 px-2 text-sm font-medium text-text-secondary dark:text-text-secondary-dark">Acciones</th>
+            <th className={`${basicStyles} text-left`}>Título</th>
+            <th className={`${basicStyles} text-left`}>Fecha</th>
+            <th className={`${basicStyles} text-left`}>Estado</th>
+            <th className={`${basicStyles} text-center`}>Acciones</th>
           </>
         );
       case 'ranking':
         return (
           <>
-            <th className="text-left py-4 px-2 text-sm font-medium text-text-secondary dark:text-text-secondary-dark">Pos.</th>
-            <th className="text-left py-4 px-2 text-sm font-medium text-text-secondary dark:text-text-secondary-dark">Jugador</th>
-            <th className="text-left py-4 px-2 text-sm font-medium text-text-secondary dark:text-text-secondary-dark">Puntos</th>
-            <th className="text-left py-4 px-2 text-sm font-medium text-text-secondary dark:text-text-secondary-dark">Club</th>
-            <th className="text-center py-4 px-2 text-sm font-medium text-text-secondary dark:text-text-secondary-dark">Acciones</th>
+            <th className={`${basicStyles} text-left`}>Pos.</th>
+            <th className={`${basicStyles} text-left`}>Jugador</th>
+            <th className={`${basicStyles} text-left`}>Puntos</th>
+            <th className={`${basicStyles} text-left`}>Club</th>
+            <th className={`${basicStyles} text-center`}>Acciones</th>
           </>
         );
       case 'noticias':
         return (
           <>
-            <th className="text-left py-4 px-2 text-sm font-medium text-text-secondary dark:text-text-secondary-dark">Título</th>
-            <th className="text-left py-4 px-2 text-sm font-medium text-text-secondary dark:text-text-secondary-dark">Categoría</th>
-            <th className="text-left py-4 px-2 text-sm font-medium text-text-secondary dark:text-text-secondary-dark">Fecha</th>
-            <th className="text-center py-4 px-2 text-sm font-medium text-text-secondary dark:text-text-secondary-dark">Acciones</th>
+            <th className={`${basicStyles} text-left`}>Título</th>
+            <th className={`${basicStyles} text-left`}>Categoría</th>
+            <th className={`${basicStyles} text-left`}>Fecha</th>
+            <th className={`${basicStyles} text-center`}>Acciones</th>
           </>
         );
       default:
@@ -78,14 +81,18 @@ const DataTable = ({ activeTab, filteredData, onEdit, onDelete }) => {
   };
 
   return (
+    /* CONTAINER */
     <div className="overflow-x-auto dark:bg-gray-800 px-2">
-      <table className="w-full ">
+      {/* TABLE */}
+      <table className="min-w-[720px] w-full">
         <thead>
           <tr className="border-b border-accent/10 dark:border-accent-dark/10 dark:text-text-dark">
+          {/* HEADERS DYNAMIC RENDERING */}
             {renderHeaders()}
           </tr>
         </thead>
         <tbody>
+          {/* FILTERED - ROWS DYNAMIC RENDERING (COULD BE ALL OF THEM IF NO FILTER APPLIED) */}
           {filteredData.map((item, index) => renderRow(item, index))}
         </tbody>
       </table>

@@ -13,6 +13,7 @@ import Footer from "../components/layout/Footer";
 import PageLoader from "../components/ui/PageLoader";
 // CONTEXT
 import { DarkProvider } from "../context/DarkContext";
+import { AuthProvider } from "../context/AuthContext";
 
 /* Primary font setting */
 const inter = Inter({
@@ -44,11 +45,11 @@ export default function ClientProvider({ children }) {
         {/* Page Loader */}
         <PageLoader isLoading={isLoading} />
         {!isLoading && (
-          <>
+          <AuthProvider>
             <Header />
             <main>{children}</main>
             <Footer />
-          </>
+          </AuthProvider>
         )}
       </DarkProvider>
     </div>

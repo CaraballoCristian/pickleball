@@ -25,7 +25,7 @@ const noticiasData = [
   },
   {
     id: 3,
-    highlighted: false,
+    highlighted: true,
     title: "Clínica de Técnica Avanzada",
     slug: "clinica-de-tecnica-avanzada",
     date: "2025-08-25",
