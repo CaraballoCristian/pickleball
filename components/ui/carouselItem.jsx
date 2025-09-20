@@ -101,9 +101,11 @@ const CarouselItem = ({ item, direction = 1 }) => {
               {item.description}
             </p>
             {/* CTA BUTTON */}
-            <Button size="lg" className="relative z-10 text-lg px-10 py-4">
-              {item.cta}
-            </Button>
+            <Link href={item.link}>
+              <Button size="lg" className="relative z-10 text-lg px-10 py-4">
+                {item.cta}
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
