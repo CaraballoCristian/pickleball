@@ -32,7 +32,7 @@ http://localhost:3000
 ---
 
 
-##✨ Features
+## ✨ Features
 - 📱 Mobile-first & fully responsive
 - 🌙 Dark / Light mode with localStorage persistence
 - ⚡ Smooth animations with Framer Motion
@@ -43,7 +43,7 @@ http://localhost:3000
 
 ---
 
-##🛠️ Tech Stack
+## 🛠️ Tech Stack
 - Next.js 15 (App Router)
 - React 19
 - Tailwind CSS v4
@@ -52,7 +52,7 @@ http://localhost:3000
 
 ---
 
-##📂 Project Structure
+## 📂 Project Structure
 ```bash
 pickleball-platform/
 │── app/
@@ -70,7 +70,7 @@ pickleball-platform/
 └── public/
 ```
 
-##⚠️ Note
+## ⚠️ Note
 
 This project uses mock/static data and does not connect to an external API.
 Dashboard changes are stored only in memory and reset after refresh.
