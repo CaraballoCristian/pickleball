@@ -1,36 +1,135 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+🚀 Pickleball Association Platform
 
-## Getting Started
+Frontend platform concept for a pickleball association.
+Designed to manage clubs, tournaments, rankings and news with a modern interface, responsive design and an administrative dashboard.
 
-First, run the development server:
+Built as a frontend-only project using mock data and local state management.
 
-```bash
+
+🌐 Live Demo
+🔗 placeholder text
+
+
+🚀 Installation & Setup
+
+# Clone the repository:
+git clone https://github.com/tuusuario/pickleball-platform.git
+
+# Install dependencies:
+npm install
+
+# Run development server:
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Open in browser:
+http://localhost:3000
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🖼️ Preview
+Pickleball Platform Preview
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+✨ Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+📱 Mobile-first & fully responsive
+🌙 Dark / Light mode with localStorage persistence
+⚡ Smooth animations with Framer Motion
+🏓 Club, tournament, ranking and news sections
+🏆 Tournament tabs and ranking system
+📰 News listing with pagination and dynamic routes
+🔐 Admin authentication flow
+🛠️ Local CRUD dashboard for content management
+📍 Club contact integration with maps and social links
+♻️ Reusable components and custom hooks
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+🛠️ Tech Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Next.js 15 (App Router)
+React 19
+Tailwind CSS v4
+Framer Motion
+Lucide React
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+📂 Routes
+
+/                      Home landing page
+/clubes                Associated clubs listing
+/noticias              News grid
+/noticias/[slug]       Individual news detail
+/torneos               Tournament listing
+/torneos/[torneo]      Tournament detail
+/ranking               Official ranking table
+/auth                  Admin login
+/dashboard             Admin CRUD panel
+
+
+🧩 State Management
+
+Custom hooks:
+
+useCarousel
+useHashObserver
+useIsDesktop
+useScrollToSection
+
+Contexts:
+
+DarkContext
+AuthContext
+
+
+📂 Project Structure
+
+pickleball-platform/
+
+│── app/
+│   ├── auth/
+│   ├── clubes/
+│   ├── noticias/
+│   ├── torneos/
+│   ├── ranking/
+│   ├── dashboard/
+│   └── globals.css
+│
+│── components/
+│   ├── layout/
+│   ├── sections/
+│   ├── ui/
+│   └── forms/
+│
+│── context/
+│── hooks/
+│── data/
+│── public/
+
+
+
+
+🔐 Admin Dashboard
+
+Includes local CRUD management for:
+
+🏓 Clubs
+🏆 Tournaments
+📊 Rankings
+📰 News
+
+Demo credentials:
+
+User:
+admin
+
+Password:
+admin123
+
+
+⚠️ Note
+
+This project uses mock/static data and does not connect to an external API.
+Dashboard changes are stored only in memory and reset after refresh.
+
+👨‍💻 Author
+
+Developed by Cristian Caraballo
