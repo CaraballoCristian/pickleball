@@ -31,8 +31,11 @@ http://localhost:3000
 ```
 ---
 
-🖼️ Preview
+🖼️ Landing Preview
 ![Landing Preview](./public/landing-mockup.png)
+
+🖼️ Dashboard Preview
+![Dashboard Preview](./public/dashboard-mockup.png)
 
 ---
 
