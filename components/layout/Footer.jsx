@@ -18,10 +18,10 @@ const Footer = () => {
               <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center">
                 <Trophy className="h-6 w-6 text-white" />
               </div>
-              <h3 className="text-xl font-bold">Pickleball La Plata</h3>
+              <h3 className="text-xl font-bold">Pickleball</h3>
             </div>
             <p className="text-gray-400">
-              La plataforma oficial del pickleball Platense
+              La plataforma oficial del pickleball
             </p>
           </div>
           
@@ -69,7 +69,7 @@ const Footer = () => {
 
         {/* FOOTER */}
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2025 Pickleball La Plata. Todos los derechos reservados.</p>
+          <p>&copy; 2025 Pickleball. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>

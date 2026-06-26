@@ -2,7 +2,7 @@ const clubesData = [
   {
     id: 1,
     name: "Club Deportivo 1",
-    address: "Av. ABC nº 123, La Plata",
+    address: "Av. ABC nº 123, CityName",
     phone: "+54 11 2345-6789",
     courts: 4,
     image: "/club_1.png",
@@ -13,7 +13,7 @@ const clubesData = [
   {
     id: 2,
     name: "Club Deportivo 2",
-    address: "Av. ABC nº 123, La Plata",
+    address: "Av. ABC nº 123, CityName",
     phone: "+54 11 2345-6789",
     courts: 6,
     image: "/club_2.png",
@@ -24,7 +24,7 @@ const clubesData = [
   {
     id: 3,
     name: "Club Deportivo 3",
-    address: "Av. ABC nº 123, La Plata",
+    address: "Av. ABC nº 123, CityName",
     phone: "+54 11 2345-6789",
     courts: 3,
     image: "/club_3.png",
@@ -35,7 +35,7 @@ const clubesData = [
   {
     id: 4,
     name: "Club Deportivo 4",
-    address: "Av. ABC nº 123, La Plata",
+    address: "Av. ABC nº 123, CityName",
     phone: "+54 11 2345-6789",
     courts: 8,
     image: "/club_4.png",
@@ -46,7 +46,7 @@ const clubesData = [
   {
     id: 5,
     name: "Club Deportivo 5",
-    address: "Av. ABC nº 123, La Plata",
+    address: "Av. ABC nº 123, CityName",
     phone: "+54 11 2345-6789",
     courts: 4,
     image: "/club_1.png",
@@ -57,7 +57,7 @@ const clubesData = [
   {
     id: 6,
     name: "Club Deportivo 6",
-    address: "Av. ABC nº 123, La Plata",
+    address: "Av. ABC nº 123, CityName",
     phone: "+54 11 2345-6789",
     courts: 6,
     image: "/club_2.png",
@@ -68,7 +68,7 @@ const clubesData = [
   {
     id: 7,
     name: "Club Deportivo 7",
-    address: "Av. ABC nº 123, La Plata",
+    address: "Av. ABC nº 123, CityName",
     phone: "+54 11 2345-6789",
     courts: 3,
     image: "/club_3.png",
@@ -79,7 +79,7 @@ const clubesData = [
   {
     id: 8,
     name: "Club Deportivo 8",
-    address: "Av. ABC nº 123, La Plata",
+    address: "Av. ABC nº 123, CityName",
     phone: "+54 11 2345-6789",
     courts: 8,
     image: "/club_4.png",
@@ -90,7 +90,7 @@ const clubesData = [
   {
     id: 9,
     name: "Club Deportivo 9",
-    address: "Av. ABC nº 123, La Plata",
+    address: "Av. ABC nº 123, CityName",
     phone: "+54 11 2345-6789",
     courts: 8,
     image: "/club_4.png",

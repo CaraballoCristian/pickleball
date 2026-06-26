@@ -4,7 +4,7 @@ import ClientProvider from "./ClientProvider";
 import "./globals.css";
 
 export const metadata = {
-  title: "APLP - Demo",
+  title: "Pickleball - Demo",
   description: "Demo",
 };
 
